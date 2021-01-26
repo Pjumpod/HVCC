@@ -24,9 +24,9 @@ Partial Class frmRunPage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRunPage))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tbPrint = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tbLotPrint = New System.Windows.Forms.ToolStripMenuItem()
@@ -259,7 +259,7 @@ Partial Class frmRunPage
         Me.tbLotPrint.Image = CType(resources.GetObject("tbLotPrint.Image"), System.Drawing.Image)
         Me.tbLotPrint.Name = "tbLotPrint"
         Me.tbLotPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.tbLotPrint.Size = New System.Drawing.Size(167, 22)
+        Me.tbLotPrint.Size = New System.Drawing.Size(196, 38)
         Me.tbLotPrint.Text = "Lot Print"
         '
         'tbEachPrint
@@ -267,7 +267,7 @@ Partial Class frmRunPage
         Me.tbEachPrint.Image = CType(resources.GetObject("tbEachPrint.Image"), System.Drawing.Image)
         Me.tbEachPrint.Name = "tbEachPrint"
         Me.tbEachPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
-        Me.tbEachPrint.Size = New System.Drawing.Size(167, 22)
+        Me.tbEachPrint.Size = New System.Drawing.Size(196, 38)
         Me.tbEachPrint.Text = "Each Print"
         '
         'tbEject
@@ -394,8 +394,8 @@ Partial Class frmRunPage
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.lbPrintUse)
         Me.GroupBox4.Controls.Add(Me.Label37)
         Me.GroupBox4.Controls.Add(Me.lbCounter)
@@ -404,8 +404,6 @@ Partial Class frmRunPage
         Me.GroupBox4.Controls.Add(Me.Label32)
         Me.GroupBox4.Controls.Add(Me.lbgsdb)
         Me.GroupBox4.Controls.Add(Me.Label30)
-        Me.GroupBox4.Controls.Add(Me.AxActSupportMsg1)
-        Me.GroupBox4.Controls.Add(Me.AxActUtlType1)
         Me.GroupBox4.Controls.Add(Me.lbCode)
         Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.txtCustomer1)
@@ -521,20 +519,16 @@ Partial Class frmRunPage
         'AxActSupportMsg1
         '
         Me.AxActSupportMsg1.Enabled = True
-        Me.AxActSupportMsg1.Location = New System.Drawing.Point(742, 175)
+        Me.AxActSupportMsg1.Location = New System.Drawing.Point(0, 0)
         Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
-        Me.AxActSupportMsg1.OcxState = CType(resources.GetObject("AxActSupportMsg1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxActSupportMsg1.Size = New System.Drawing.Size(32, 32)
-        Me.AxActSupportMsg1.TabIndex = 50
+        Me.AxActSupportMsg1.TabIndex = 0
         '
         'AxActUtlType1
         '
         Me.AxActUtlType1.Enabled = True
-        Me.AxActUtlType1.Location = New System.Drawing.Point(704, 175)
+        Me.AxActUtlType1.Location = New System.Drawing.Point(0, 0)
         Me.AxActUtlType1.Name = "AxActUtlType1"
-        Me.AxActUtlType1.OcxState = CType(resources.GetObject("AxActUtlType1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxActUtlType1.Size = New System.Drawing.Size(32, 32)
-        Me.AxActUtlType1.TabIndex = 49
+        Me.AxActUtlType1.TabIndex = 0
         '
         'lbCode
         '
@@ -771,7 +765,7 @@ Partial Class frmRunPage
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.btOK)
         Me.GroupBox3.Controls.Add(Me.lbShiftFinish)
         Me.GroupBox3.Controls.Add(Me.lbShiftStart)
@@ -1192,8 +1186,8 @@ Partial Class frmRunPage
         'GroupBox5
         '
         Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.Controls.Add(Me.Label39)
         Me.GroupBox5.Controls.Add(Me.cmbEachPrinter)
         Me.GroupBox5.Controls.Add(Me.PictureBox2)
@@ -1259,7 +1253,7 @@ Partial Class frmRunPage
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.Label38)
         Me.GroupBox1.Controls.Add(Me.cmbLotPrinter)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
@@ -1364,8 +1358,8 @@ Partial Class frmRunPage
         'List1
         '
         Me.List1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.List1.BackColor = System.Drawing.SystemColors.Window
         Me.List1.Cursor = System.Windows.Forms.Cursors.Default
         Me.List1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -1560,6 +1554,7 @@ Partial Class frmRunPage
         Me.lvPrint.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lvPrint.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lvPrint.FullRowSelect = True
+        Me.lvPrint.HideSelection = False
         Me.lvPrint.Location = New System.Drawing.Point(3, 3)
         Me.lvPrint.Name = "lvPrint"
         Me.lvPrint.Size = New System.Drawing.Size(1266, 280)
@@ -1660,35 +1655,35 @@ Partial Class frmRunPage
         'dgvLabelPrint
         '
         Me.dgvLabelPrint.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLabelPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.dgvLabelPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvLabelPrint.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvLabelPrint.Location = New System.Drawing.Point(3, 3)
         Me.dgvLabelPrint.Name = "dgvLabelPrint"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLabelPrint.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvLabelPrint.Size = New System.Drawing.Size(1266, 280)
         Me.dgvLabelPrint.TabIndex = 14
@@ -1711,7 +1706,7 @@ Partial Class frmRunPage
         'tsToday
         '
         Me.tsToday.Name = "tsToday"
-        Me.tsToday.Size = New System.Drawing.Size(40, 17)
+        Me.tsToday.Size = New System.Drawing.Size(38, 17)
         Me.tsToday.Text = "Today"
         '
         'NotifyIcon1
@@ -1728,13 +1723,13 @@ Partial Class frmRunPage
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tbExitmenu})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(93, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(94, 26)
         '
         'tbExitmenu
         '
         Me.tbExitmenu.Image = CType(resources.GetObject("tbExitmenu.Image"), System.Drawing.Image)
         Me.tbExitmenu.Name = "tbExitmenu"
-        Me.tbExitmenu.Size = New System.Drawing.Size(92, 22)
+        Me.tbExitmenu.Size = New System.Drawing.Size(93, 22)
         Me.tbExitmenu.Text = "Exit"
         '
         'Timer1
@@ -1766,7 +1761,7 @@ Partial Class frmRunPage
         Me.mnuPrint.Image = CType(resources.GetObject("mnuPrint.Image"), System.Drawing.Image)
         Me.mnuPrint.Name = "mnuPrint"
         Me.mnuPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.mnuPrint.Size = New System.Drawing.Size(140, 22)
+        Me.mnuPrint.Size = New System.Drawing.Size(180, 22)
         Me.mnuPrint.Text = "Print"
         '
         'mnuLotPrint
@@ -1788,7 +1783,7 @@ Partial Class frmRunPage
         Me.mnuExit.Image = CType(resources.GetObject("mnuExit.Image"), System.Drawing.Image)
         Me.mnuExit.Name = "mnuExit"
         Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuExit.Size = New System.Drawing.Size(140, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(180, 22)
         Me.mnuExit.Text = "Exit"
         '
         'ToolStripMenuItem6
@@ -1860,7 +1855,7 @@ Partial Class frmRunPage
         '
         Me.mnuRefresh.Image = CType(resources.GetObject("mnuRefresh.Image"), System.Drawing.Image)
         Me.mnuRefresh.Name = "mnuRefresh"
-        Me.mnuRefresh.Size = New System.Drawing.Size(113, 22)
+        Me.mnuRefresh.Size = New System.Drawing.Size(180, 22)
         Me.mnuRefresh.Text = "Refresh"
         '
         'ToolStripMenuItem1
@@ -1876,13 +1871,13 @@ Partial Class frmRunPage
         Me.mnuAuto.Checked = True
         Me.mnuAuto.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuAuto.Name = "mnuAuto"
-        Me.mnuAuto.Size = New System.Drawing.Size(142, 22)
+        Me.mnuAuto.Size = New System.Drawing.Size(180, 22)
         Me.mnuAuto.Text = "Auto Print"
         '
         'mnuManual
         '
         Me.mnuManual.Name = "mnuManual"
-        Me.mnuManual.Size = New System.Drawing.Size(142, 22)
+        Me.mnuManual.Size = New System.Drawing.Size(180, 22)
         Me.mnuManual.Text = "Manual Print"
         '
         'ToolStripMenuItem16
