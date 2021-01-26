@@ -1,0 +1,20 @@
+C:\Users\user\AppData\Local\Temporary Projects\HVCC_Radiator\bin\Debug\HVCC_Radiator.exe.config
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\bin\Debug\HVCC_Radiator.exe.config
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\bin\Debug\HVCC_Radiator.exe
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\bin\Debug\HVCC_Radiator.pdb
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\bin\Debug\HVCC_Radiator.xml
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmAddCustomer.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmAddModel.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmAddOrder.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmAddPartNo.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmPrinting.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmRouting.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmRunPage.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmShift.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.frmUserPass.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.Resources.resources
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.vbproj.GenerateResource.Cache
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.exe
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.xml
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.pdb
+D:\Programming\VB\PLC\HVCC\HVCC_Radiator\HVCC_Radiator\obj\Debug\HVCC_Radiator.vbprojResolveAssemblyReference.cache
