@@ -6,6 +6,7 @@ Public Class frmPrinting
         ShowModel()
         ShowPrint()
     End Sub
+
     Private Sub ShowModel()
         With Conndb
             If .State = ConnectionState.Open Then .Close()

@@ -586,6 +586,9 @@ Public Class frmRunPage
         If lvPrint.SelectedItems.Count > 0 Then
             lv0 = lvPrint.SelectedItems(0).SubItems(0).Text
             lv1 = lvPrint.SelectedItems(0).SubItems(1).Text
+        Else
+            lv0 = String.Empty
+            lv1 = String.Empty
         End If
         With Conndb
             If .State = ConnectionState.Open Then .Close()
@@ -1390,7 +1393,9 @@ Public Class frmRunPage
         For lCount = 0 To lSize
             lMod = lCount Mod 8
             If lMod = 0 Then
+#Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 szList = szList & Str(lCount) & ":" & Chr(9) & Str(lData(lCount)) & Chr(9)
+#Enable Warning BC42104 ' Variable is used before it has been assigned a value
             ElseIf lMod = 7 Then
                 szList = szList & Str(lData(lCount)) & Chr(9)
                 List1.Items.Add((szList))
@@ -1500,6 +1505,7 @@ Public Class frmRunPage
 
         Dim szActErrorMessage As String     'Message as the return code of ActUtlType
         Dim iSupportReturnCode As Integer   'Return code of ActSupportMsg
+        szActErrorMessage = String.Empty
 
         'The GetErrorMessage method is executed
         iSupportReturnCode = AxActSupportMsg1.GetErrorMessage(iActReturnCode, szActErrorMessage)
@@ -1518,6 +1524,7 @@ Public Class frmRunPage
         Dim lReturnValue As Integer 'ReturnValue
         Dim szMessage As String 'Message
         Dim lLength As Integer 'Length of ReturnValue string
+        szMessage = String.Empty
 
         'Check whether the value of ReturnValue is a numerical value within the range of the LONG type.
         lLength = Len(Trim(Text_ReturnValue.Text))

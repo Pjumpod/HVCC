@@ -52,8 +52,6 @@ Partial Class frmRunPage
         Me.Label32 = New System.Windows.Forms.Label()
         Me.lbgsdb = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.AxActSupportMsg1 = New AxActSupportMsgLib.AxActSupportMsg()
-        Me.AxActUtlType1 = New AxActUtlTypeLib.AxActUtlType()
         Me.lbCode = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtCustomer1 = New System.Windows.Forms.TextBox()
@@ -169,6 +167,8 @@ Partial Class frmRunPage
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvLabelPrint = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AxActSupportMsg1 = New AxActSupportMsgLib.AxActSupportMsg()
+        Me.AxActUtlType1 = New AxActUtlTypeLib.AxActUtlType()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsToday = New System.Windows.Forms.ToolStripStatusLabel()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
@@ -213,8 +213,6 @@ Partial Class frmRunPage
         Me.TabDatalogger.SuspendLayout()
         Me.TabAuto.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabManual.SuspendLayout()
@@ -229,6 +227,8 @@ Partial Class frmRunPage
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvLabelPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -515,20 +515,6 @@ Partial Class frmRunPage
         Me.Label30.Size = New System.Drawing.Size(71, 13)
         Me.Label30.TabIndex = 55
         Me.Label30.Text = "GSDB Code :"
-        '
-        'AxActSupportMsg1
-        '
-        Me.AxActSupportMsg1.Enabled = True
-        Me.AxActSupportMsg1.Location = New System.Drawing.Point(0, 0)
-        Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
-        Me.AxActSupportMsg1.TabIndex = 0
-        '
-        'AxActUtlType1
-        '
-        Me.AxActUtlType1.Enabled = True
-        Me.AxActUtlType1.Location = New System.Drawing.Point(0, 0)
-        Me.AxActUtlType1.Name = "AxActUtlType1"
-        Me.AxActUtlType1.TabIndex = 0
         '
         'lbCode
         '
@@ -1693,6 +1679,20 @@ Partial Class frmRunPage
         Me.Column1.HeaderText = "No."
         Me.Column1.Name = "Column1"
         '
+        'AxActSupportMsg1
+        '
+        Me.AxActSupportMsg1.Enabled = True
+        Me.AxActSupportMsg1.Location = New System.Drawing.Point(0, 0)
+        Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
+        Me.AxActSupportMsg1.TabIndex = 0
+        '
+        'AxActUtlType1
+        '
+        Me.AxActUtlType1.Enabled = True
+        Me.AxActUtlType1.Location = New System.Drawing.Point(0, 0)
+        Me.AxActUtlType1.Name = "AxActUtlType1"
+        Me.AxActUtlType1.TabIndex = 0
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.Control
@@ -1947,8 +1947,6 @@ Partial Class frmRunPage
         Me.TabAuto.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1969,6 +1967,8 @@ Partial Class frmRunPage
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         CType(Me.dgvLabelPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
