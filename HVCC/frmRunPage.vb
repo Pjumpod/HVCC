@@ -1,11 +1,11 @@
-﻿Imports System.Runtime.InteropServices
-Imports System.IO
-Imports System.Text
-Imports System.Data
-Imports ZM400Print
-Imports System.Configuration
+﻿'Imports System.Runtime.InteropServices
+'Imports System.IO
+' Imports System.Configuration
 Imports System.Data.OleDb
 Imports System.Drawing.Printing
+Imports System.Text
+'Imports System.Data
+Imports ZM400Print
 
 Public Class frmRunPage
     Dim cnt1 As Integer = 0
@@ -1100,7 +1100,7 @@ Public Class frmRunPage
         Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(txtCustomer2.Text, 4))
         Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(txtCustomer2.Text, 1))
         Dim Cus11 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 5, 6))
-        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 12, 2))
+        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 12)) ', 2))
         pText.Remove(0, pText.Length)
         pText.AppendLine("^XA")   ' Start new document
         pText.AppendLine("^PW1000")   ' Print W=100
@@ -1135,7 +1135,7 @@ Public Class frmRunPage
         Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(txtCustomer2.Text, 4))
         Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(txtCustomer2.Text, 1))
         Dim Cus11 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 5, 6))
-        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 12, 2))
+        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(txtCustomer1.Text, 12)) ', 2))
         Dim Cus13 As String = Format(Microsoft.VisualBasic.Left(txtCustomer1.Text, 4))
         pText.Remove(0, pText.Length)
         pText.AppendLine("^XA")   ' Start new document
@@ -1202,7 +1202,7 @@ Public Class frmRunPage
         Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(cmbCustomer2.Text, 4))
         Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(cmbCustomer2.Text, 1))
         Dim Cus11 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 5, 6))
-        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 12, 2))
+        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 12)) ', 2))
         pText.Remove(0, pText.Length)
         pText.AppendLine("^XA")   ' Start new document
         pText.AppendLine("^PW1000")   ' Print W=100
@@ -1242,7 +1242,7 @@ Public Class frmRunPage
         Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(cmbCustomer2.Text, 4))
         Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(cmbCustomer2.Text, 1))
         Dim Cus11 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 5, 6))
-        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 12, 2))
+        Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(cmbCustomer1.Text, 12)) ', 2))
         Dim Cus13 As String = Format(Microsoft.VisualBasic.Left(cmbCustomer1.Text, 4))
         pText.Remove(0, pText.Length)
         pText.AppendLine("^XA")   ' Start new document
