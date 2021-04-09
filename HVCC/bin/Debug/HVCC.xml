@@ -6,109 +6,105 @@ HVCC
 </name>
 </assembly>
 <members>
-<member name="T:HVCC.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
-<member name="P:HVCC.My.Resources.Resources.ResourceManager">
-<summary>
+<member name="F:HVCC.ActDefine.CPU_Q2ACPU">
+ QnACPU
+
+</member><member name="F:HVCC.ActDefine.CPU_Q02CPU">
+ QCPU Q
+
+</member><member name="F:HVCC.ActDefine.CPU_A0J2HCPU">
+ ACPU
+
+</member><member name="F:HVCC.ActDefine.CPU_Q02CPU_A">
+ QCPU A
+
+</member><member name="F:HVCC.ActDefine.CPU_L02CPU">
+ LCPU
+
+</member><member name="F:HVCC.ActDefine.CPU_Q12DC_V">
+ C Controller
+
+</member><member name="F:HVCC.ActDefine.CPU_Q172CPU">
+ Q MOTION 	
+
+</member><member name="F:HVCC.ActDefine.CPU_QS001CPU">
+ QSCPU
+
+</member><member name="F:HVCC.ActDefine.CPU_FX0CPU">
+ FXCPU
+
+</member><member name="F:HVCC.ActDefine.CPU_BOARD">
+ BOARD
+
+</member><member name="F:HVCC.ActDefine.CPU_A171SHCPU">
+ MOTION
+
+</member><member name="F:HVCC.ActDefine.CPU_A900GOT">
+ GOT
+
+</member><member name="F:HVCC.ActDefine.PORT_1">
+ PORT
+
+</member><member name="F:HVCC.ActDefine.BAUDRATE_300">
+ BAUDRATE
+
+</member><member name="F:HVCC.ActDefine.DATABIT_7">
+ DATA BIT
+
+</member><member name="F:HVCC.ActDefine.NO_PARRITY">
+ PARITY
+
+</member><member name="F:HVCC.ActDefine.STOPBIT_ONE">
+ STOP BITS
+
+</member><member name="F:HVCC.ActDefine.TRC_DTR">
+ SERIAL CONTROL
+
+</member><member name="F:HVCC.ActDefine.SUM_CHECK">
+ SUM CHECK
+
+</member><member name="F:HVCC.ActDefine.PACKET_ASCII">
+ PACKET TYPE
+
+</member><member name="F:HVCC.ActDefine.TEL_AUTO_CONNECT">
+ CONNECT WAY
+
+</member><member name="F:HVCC.ActDefine.LINETYPE_PULSE">
+ LINE TYPE
+
+</member><member name="F:HVCC.ActDefine.GOT_PCIF_USB">
+ GOT TRANSPARENT PC IF
+
+</member><member name="F:HVCC.ActDefine.GOT_PLCIF_SERIAL_QCPUQ">
+ GOT TRANSPARENT PLC IF
+
+</member><member name="F:HVCC.ActDefine.UNIT_QNCPU">
+ ACTPROGTYPE UNITTYPE
+
+</member><member name="F:HVCC.ActDefine.PROTOCOL_SERIAL">
+ ACTPROGTYPE PROTOCOLTYPE
+
+</member><member name="P:HVCC.My.Resources.Resources.ResourceManager">
+	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member>
-<member name="P:HVCC.My.Resources.Resources.Culture">
-<summary>
+</member><member name="P:HVCC.My.Resources.Resources.Culture">
+	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member>
-<member name="P:HVCC.My.Resources.Resources._AS">
-<summary>
+</member><member name="P:HVCC.My.Resources.Resources._AS">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:HVCC.My.Resources.Resources.barcode_image1">
-<summary>
+</member><member name="P:HVCC.My.Resources.Resources.barcode_image1">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="F:HVCC.ActDefine.CPU_Q2ACPU">
- QnACPU
-</member>
-<member name="F:HVCC.ActDefine.CPU_Q02CPU">
- QCPU Q
-</member>
-<member name="F:HVCC.ActDefine.CPU_A0J2HCPU">
- ACPU
-</member>
-<member name="F:HVCC.ActDefine.CPU_Q02CPU_A">
- QCPU A
-</member>
-<member name="F:HVCC.ActDefine.CPU_L02CPU">
- LCPU
-</member>
-<member name="F:HVCC.ActDefine.CPU_Q12DC_V">
- C Controller
-</member>
-<member name="F:HVCC.ActDefine.CPU_Q172CPU">
- Q MOTION 	
-</member>
-<member name="F:HVCC.ActDefine.CPU_QS001CPU">
- QSCPU
-</member>
-<member name="F:HVCC.ActDefine.CPU_FX0CPU">
- FXCPU
-</member>
-<member name="F:HVCC.ActDefine.CPU_BOARD">
- BOARD
-</member>
-<member name="F:HVCC.ActDefine.CPU_A171SHCPU">
- MOTION
-</member>
-<member name="F:HVCC.ActDefine.CPU_A900GOT">
- GOT
-</member>
-<member name="F:HVCC.ActDefine.PORT_1">
- PORT
-</member>
-<member name="F:HVCC.ActDefine.BAUDRATE_300">
- BAUDRATE
-</member>
-<member name="F:HVCC.ActDefine.DATABIT_7">
- DATA BIT
-</member>
-<member name="F:HVCC.ActDefine.NO_PARRITY">
- PARITY
-</member>
-<member name="F:HVCC.ActDefine.STOPBIT_ONE">
- STOP BITS
-</member>
-<member name="F:HVCC.ActDefine.TRC_DTR">
- SERIAL CONTROL
-</member>
-<member name="F:HVCC.ActDefine.SUM_CHECK">
- SUM CHECK
-</member>
-<member name="F:HVCC.ActDefine.PACKET_ASCII">
- PACKET TYPE
-</member>
-<member name="F:HVCC.ActDefine.TEL_AUTO_CONNECT">
- CONNECT WAY
-</member>
-<member name="F:HVCC.ActDefine.LINETYPE_PULSE">
- LINE TYPE
-</member>
-<member name="F:HVCC.ActDefine.GOT_PCIF_USB">
- GOT TRANSPARENT PC IF
-</member>
-<member name="F:HVCC.ActDefine.GOT_PLCIF_SERIAL_QCPUQ">
- GOT TRANSPARENT PLC IF
-</member>
-<member name="F:HVCC.ActDefine.UNIT_QNCPU">
- ACTPROGTYPE UNITTYPE
-</member>
-<member name="F:HVCC.ActDefine.PROTOCOL_SERIAL">
- ACTPROGTYPE PROTOCOLTYPE
+</member><member name="T:HVCC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member>
 </members>
 </doc>

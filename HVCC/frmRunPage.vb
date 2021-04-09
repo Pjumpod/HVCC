@@ -1367,7 +1367,7 @@ Public Class frmRunPage
         Dim szDeviceName As String 'Device name
         Dim lSize As Integer 'Size
         Dim lData() As Integer 'Device Value
-        Dim szList As String 'Data for ListBox
+        Dim szList As String = "" 'Data for ListBox
         Dim lMod As Integer 'Surplus
         Dim lCount As Integer 'Counter
 
@@ -1393,9 +1393,7 @@ Public Class frmRunPage
         For lCount = 0 To lSize
             lMod = lCount Mod 8
             If lMod = 0 Then
-#Disable Warning BC42104 ' Variable is used before it has been assigned a value
                 szList = szList & Str(lCount) & ":" & Chr(9) & Str(lData(lCount)) & Chr(9)
-#Enable Warning BC42104 ' Variable is used before it has been assigned a value
             ElseIf lMod = 7 Then
                 szList = szList & Str(lData(lCount)) & Chr(9)
                 List1.Items.Add((szList))
