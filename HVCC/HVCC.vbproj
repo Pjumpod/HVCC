@@ -260,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Aha-Soft-Universal-Shop-Print.ico" />
+    <Resource Include="Resources\zebra.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="Resources\AS.png" />
   </ItemGroup>
   <ItemGroup>

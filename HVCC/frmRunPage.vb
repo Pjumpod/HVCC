@@ -669,7 +669,7 @@ Public Class frmRunPage
     Private Sub AutoPrintLabel()
         If rbMatrix.Checked = True Then
             Label30X550Matrix()
-        Else
+        ElseIf rbQR.Checked = True Then
             Label30X550QR()
         End If
         SaveDataLogAuto()
@@ -858,7 +858,7 @@ Public Class frmRunPage
             If count >= k And count <= l Then
                 If rbMatrix.Checked = True Then
                     Label30X550MatrixManual()
-                Else
+                ElseIf rbQR.Checked = True Then
                     Label30X550QRManual()
                 End If
                 SaveDataLogManual()
@@ -881,7 +881,7 @@ Public Class frmRunPage
             If count >= k And count <= l Then
                 If rbMatrix.Checked = True Then
                     Label30X550MatrixManual()
-                Else
+                ElseIf rbQR.Checked = True Then
                     Label30X550QRManual()
                 End If
                 SaveDataLogManual()
@@ -1077,17 +1077,46 @@ Public Class frmRunPage
     Private Sub rbEachQR_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbEachQR.CheckedChanged
         If rbEachQR.Checked = True Then
             PictureBox2.Image = My.Resources._AS
-        Else
+            rbEachMatrix.Checked = False
+            rbEachZPL.Checked = False
+        ElseIf rbEachMatrix.Checked = True Then
             PictureBox2.Image = My.Resources.barcode_image1
+        Else
+            PictureBox2.Image = My.Resources.zebra
         End If
     End Sub
+
+    Private Sub rbEachMatrix_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbEachMatrix.CheckedChanged
+        If rbEachQR.Checked = True Then
+            PictureBox2.Image = My.Resources._AS
+        ElseIf rbEachMatrix.Checked = True Then
+            PictureBox2.Image = My.Resources.barcode_image1
+            rbEachQR.Checked = False
+            rbEachZPL.Checked = False
+        Else
+            PictureBox2.Image = My.Resources.zebra
+        End If
+    End Sub
+
+    Private Sub rbEachZPL_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbEachZPL.CheckedChanged
+        If rbEachQR.Checked = True Then
+            PictureBox2.Image = My.Resources._AS
+        ElseIf rbEachMatrix.Checked = True Then
+            PictureBox2.Image = My.Resources.barcode_image1
+        Else
+            PictureBox2.Image = My.Resources.zebra
+            rbEachMatrix.Checked = False
+            rbEachQR.Checked = False
+        End If
+    End Sub
+
     Private Sub AutoPrintOneByOne()
         If lbPrintUse.Text = "NO" Then
             Exit Sub
         Else
             If rbEachQR.Checked = True Then
                 Label55X25QR()
-            Else
+            ElseIf rbEachMatrix.Checked = True Then
                 Label55X25Matrix()
             End If
             NotifyIcon1.BalloonTipText = "Print Each Label in Progress...."
@@ -1179,7 +1208,7 @@ Public Class frmRunPage
             If count >= i And count <= j Then
                 If rbEachQR.Checked = True Then
                     Label55X25QRManual()
-                Else
+                ElseIf rbEachMatrix.Checked Then
                     Label55X25MatrixManual()
                 End If
                 SaveDataLogManual()
@@ -1726,15 +1755,21 @@ Public Class frmRunPage
             lbModel.Text = txtModel.Text
             lbOrder.Text = txtOrder.Text
             ShowPrintQueue()
-            Dim chk As Integer = CInt(lbAutoModel.Text)
-            If chk > 15 Then
-                rbEachMatrix.Checked = True
+            If (IsNumeric(lbAutoModel.Text)) Then
+                Dim chk As Integer = CInt(lbAutoModel.Text)
+                If (chk > 15) And (chk < 60) Then
+                    rbEachMatrix.Checked = True
+                ElseIf (chk <= 15) Then
+                    rbEachQR.Checked = True
+                Else
+                    MessageBox.Show("Error, Not know this label format. 'please migrate to ZPL'")
+                End If
             Else
-                rbEachQR.Checked = True
+                rbEachZPL.Checked = True
             End If
             AutoSerialUp()
             AutoCounterUp()
-          ListviewAdd()
+            ListviewAdd()
         Else
             btOK.BackColor = Color.LightGreen
         End If
@@ -1998,22 +2033,36 @@ Public Class frmRunPage
     Private Sub cmbModel_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbModel.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
-            Dim chk As Integer = CInt(cmbAutomodel.Text)
-            If chk > 15 Then
-                rbEachMatrix.Checked = True
+            If (IsNumeric(lbAutoModel.Text)) Then
+                Dim chk As Integer = CInt(lbAutoModel.Text)
+                If (chk > 15) And (chk < 60) Then
+                    rbEachMatrix.Checked = True
+                ElseIf (chk <= 15) Then
+                    rbEachQR.Checked = True
+                Else
+                    rbEachZPL.Checked = True
+                    MessageBox.Show("Error, Not know this label format. 'please migrate to ZPL'")
+                End If
             Else
-                rbEachQR.Checked = True
+                rbEachZPL.Checked = True
             End If
         End If
     End Sub
     Private Sub cmbOrder_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbOrder.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
-            Dim chk As Integer = CInt(cmbAutomodel.Text)
-            If chk > 15 Then
-                rbEachMatrix.Checked = True
+            If (IsNumeric(lbAutoModel.Text)) Then
+                Dim chk As Integer = CInt(lbAutoModel.Text)
+                If (chk > 15) And (chk < 60) Then
+                    rbEachMatrix.Checked = True
+                ElseIf (chk <= 15) Then
+                    rbEachQR.Checked = True
+                Else
+                    rbEachZPL.Checked = True
+                    MessageBox.Show("Error, Not know this label format. 'please migrate to ZPL'")
+                End If
             Else
-                rbEachQR.Checked = True
+                rbEachZPL.Checked = True
             End If
         End If
     End Sub
@@ -2046,4 +2095,5 @@ Public Class frmRunPage
             MsgBox("Error from " + ex.Message, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Error to Print Label")
         End Try
     End Sub
+
 End Class

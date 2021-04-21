@@ -75,3 +75,4 @@ D:\Tum\freelance\HVCC\HVCC\HVCC\obj\x86\Debug\HVCC.exe
 D:\Tum\freelance\HVCC\HVCC\HVCC\obj\x86\Debug\HVCC.xml
 D:\Tum\freelance\HVCC\HVCC\HVCC\obj\x86\Debug\HVCC.pdb
 D:\Tum\freelance\HVCC\HVCC\HVCC\obj\x86\Debug\HVCC.vbprojResolveAssemblyReference.cache
+D:\Tum\freelance\HVCC\HVCC\HVCC\obj\x86\Debug\HVCC.g.resources

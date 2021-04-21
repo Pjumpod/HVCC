@@ -118,6 +118,7 @@ Partial Class frmRunPage
         Me.TabBarcode = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.rbEachZPL = New System.Windows.Forms.RadioButton()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.cmbEachPrinter = New System.Windows.Forms.ComboBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -259,7 +260,7 @@ Partial Class frmRunPage
         Me.tbLotPrint.Image = CType(resources.GetObject("tbLotPrint.Image"), System.Drawing.Image)
         Me.tbLotPrint.Name = "tbLotPrint"
         Me.tbLotPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.tbLotPrint.Size = New System.Drawing.Size(196, 38)
+        Me.tbLotPrint.Size = New System.Drawing.Size(167, 22)
         Me.tbLotPrint.Text = "Lot Print"
         '
         'tbEachPrint
@@ -267,7 +268,7 @@ Partial Class frmRunPage
         Me.tbEachPrint.Image = CType(resources.GetObject("tbEachPrint.Image"), System.Drawing.Image)
         Me.tbEachPrint.Name = "tbEachPrint"
         Me.tbEachPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
-        Me.tbEachPrint.Size = New System.Drawing.Size(196, 38)
+        Me.tbEachPrint.Size = New System.Drawing.Size(167, 22)
         Me.tbEachPrint.Text = "Each Print"
         '
         'tbEject
@@ -1174,6 +1175,7 @@ Partial Class frmRunPage
         Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox5.Controls.Add(Me.rbEachZPL)
         Me.GroupBox5.Controls.Add(Me.Label39)
         Me.GroupBox5.Controls.Add(Me.cmbEachPrinter)
         Me.GroupBox5.Controls.Add(Me.PictureBox2)
@@ -1185,6 +1187,18 @@ Partial Class frmRunPage
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Each Print Bar Code Type"
+        '
+        'rbEachZPL
+        '
+        Me.rbEachZPL.AutoSize = True
+        Me.rbEachZPL.Checked = True
+        Me.rbEachZPL.Location = New System.Drawing.Point(16, 91)
+        Me.rbEachZPL.Name = "rbEachZPL"
+        Me.rbEachZPL.Size = New System.Drawing.Size(83, 17)
+        Me.rbEachZPL.TabIndex = 57
+        Me.rbEachZPL.TabStop = True
+        Me.rbEachZPL.Text = "Use ZPL file"
+        Me.rbEachZPL.UseVisualStyleBackColor = True
         '
         'Label39
         '
@@ -1206,7 +1220,7 @@ Partial Class frmRunPage
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.HVCC.My.Resources.Resources._AS
+        Me.PictureBox2.Image = Global.HVCC.My.Resources.Resources.zebra
         Me.PictureBox2.Location = New System.Drawing.Point(157, 16)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(97, 92)
@@ -1761,7 +1775,7 @@ Partial Class frmRunPage
         Me.mnuPrint.Image = CType(resources.GetObject("mnuPrint.Image"), System.Drawing.Image)
         Me.mnuPrint.Name = "mnuPrint"
         Me.mnuPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.mnuPrint.Size = New System.Drawing.Size(180, 22)
+        Me.mnuPrint.Size = New System.Drawing.Size(140, 22)
         Me.mnuPrint.Text = "Print"
         '
         'mnuLotPrint
@@ -1783,7 +1797,7 @@ Partial Class frmRunPage
         Me.mnuExit.Image = CType(resources.GetObject("mnuExit.Image"), System.Drawing.Image)
         Me.mnuExit.Name = "mnuExit"
         Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuExit.Size = New System.Drawing.Size(180, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(140, 22)
         Me.mnuExit.Text = "Exit"
         '
         'ToolStripMenuItem6
@@ -1855,7 +1869,7 @@ Partial Class frmRunPage
         '
         Me.mnuRefresh.Image = CType(resources.GetObject("mnuRefresh.Image"), System.Drawing.Image)
         Me.mnuRefresh.Name = "mnuRefresh"
-        Me.mnuRefresh.Size = New System.Drawing.Size(180, 22)
+        Me.mnuRefresh.Size = New System.Drawing.Size(113, 22)
         Me.mnuRefresh.Text = "Refresh"
         '
         'ToolStripMenuItem1
@@ -1871,13 +1885,13 @@ Partial Class frmRunPage
         Me.mnuAuto.Checked = True
         Me.mnuAuto.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuAuto.Name = "mnuAuto"
-        Me.mnuAuto.Size = New System.Drawing.Size(180, 22)
+        Me.mnuAuto.Size = New System.Drawing.Size(142, 22)
         Me.mnuAuto.Text = "Auto Print"
         '
         'mnuManual
         '
         Me.mnuManual.Name = "mnuManual"
-        Me.mnuManual.Size = New System.Drawing.Size(180, 22)
+        Me.mnuManual.Size = New System.Drawing.Size(142, 22)
         Me.mnuManual.Text = "Manual Print"
         '
         'ToolStripMenuItem16
@@ -2086,8 +2100,6 @@ Partial Class frmRunPage
     Friend WithEvents txtLeakTest As System.Windows.Forms.TextBox
     Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btOK As System.Windows.Forms.Button
-    Friend WithEvents AxActUtlType1 As AxActUtlTypeLib.AxActUtlType
-    Friend WithEvents AxActSupportMsg1 As AxActSupportMsgLib.AxActSupportMsg
     Friend WithEvents tbConnect As System.Windows.Forms.ToolStripButton
     Friend WithEvents tbDisconnect As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
@@ -2152,4 +2164,7 @@ Partial Class frmRunPage
     Friend WithEvents cmbLotPrinter As System.Windows.Forms.ComboBox
     Friend WithEvents Label39 As System.Windows.Forms.Label
     Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents rbEachZPL As System.Windows.Forms.RadioButton
+    Private WithEvents AxActUtlType1 As AxActUtlTypeLib.AxActUtlType
+    Private WithEvents AxActSupportMsg1 As AxActSupportMsgLib.AxActSupportMsg
 End Class

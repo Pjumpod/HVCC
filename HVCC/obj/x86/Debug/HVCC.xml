@@ -101,6 +101,10 @@ HVCC
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:HVCC.My.Resources.Resources.zebra">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:HVCC.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
