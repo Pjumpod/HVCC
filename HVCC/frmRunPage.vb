@@ -1583,7 +1583,7 @@ Public Class frmRunPage
     Private Sub MonitorStart()
         Dim lReturnValue As Integer 'ReturnValue
         'The logical station number is set.
-        MessageBox.Show(Text_LogicalStationNumber.Text)
+        'MessageBox.Show(Text_LogicalStationNumber.Text)
         AxActUtlType1.ActLogicalStationNumber = CInt(Text_LogicalStationNumber.Text)
         'The password is set
         AxActUtlType1.ActPassword = txt_DeviceDataBlock.Text
