@@ -228,14 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRunPage.resx">
       <DependentUpon>frmRunPage.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShift.resx">
       <DependentUpon>frmShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserPass.resx">
       <DependentUpon>frmUserPass.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

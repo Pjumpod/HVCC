@@ -1,11 +1,13 @@
-﻿'Imports System.Runtime.InteropServices
-'Imports System.IO
-' Imports System.Configuration
+﻿Imports System.Runtime.InteropServices
+Imports System.IO
+Imports System.Text
+Imports System.Data
+Imports ZM400Print
+Imports System.Configuration
 Imports System.Data.OleDb
 Imports System.Drawing.Printing
-Imports System.Text
-'Imports System.Data
-Imports ZM400Print
+
+
 
 Public Class frmRunPage
     Dim cnt1 As Integer = 0
@@ -27,7 +29,7 @@ Public Class frmRunPage
     Dim objAsciiCodePageEncoding As Encoding = Encoding.Default  'Create an instance for encoding to(or decoding from) ASCII Code Page.
 
 #End Region
-    Private Sub frmRunPage_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub frmRunPage_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Select Case e.CloseReason
             Case CloseReason.ApplicationExitCall
                 e.Cancel = False
@@ -49,7 +51,7 @@ Public Class frmRunPage
                 e.Cancel = False
         End Select
     End Sub
-    Private Sub frmRunPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmRunPage_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         LoadRounting()
         ShowDataLog()
         tbPrint.Enabled = False
@@ -1377,8 +1379,7 @@ Public Class frmRunPage
         'Get each element of ShortType array.
         For iNumber = 0 To iSizeOfShortArray - 1
             Try
-                sharrShortArrayValue(iNumber) = Convert.ToInt16(txt_SourceOfShortArray.Lines(iNumber))
-
+                sharrShortArrayValue(iNumber) = Integer.Parse(txt_SourceOfShortArray.Lines(iNumber))
             Catch exExcepion As Exception
                 'When the value is nothing or out of the range, the exception is processed.
                 MessageBox.Show(exExcepion.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1497,7 +1498,7 @@ Public Class frmRunPage
     Private Function GetIntValue(ByVal txt_SourceOfIntValue As TextBox, ByRef iGottenIntValue As Integer) As Boolean
         'Get the value as 32bit integer from TextBox
         Try
-            iGottenIntValue = Convert.ToInt32(txt_SourceOfIntValue.Text)
+            iGottenIntValue = Integer.Parse(txt_SourceOfIntValue.Text)
         Catch exExcepion As Exception
             'When the value is nothing or out of the range, the exception is processed.
             MessageBox.Show(exExcepion.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -1554,14 +1555,14 @@ Public Class frmRunPage
         szMessage = String.Empty
 
         'Check whether the value of ReturnValue is a numerical value within the range of the LONG type.
-        lLength = Len(Trim(Text_ReturnValue.Text))
+        lLength = Len(Text_ReturnValue.Text.Trim())
         If (lLength > 8) Or (lLength = 0) Then
             MsgBox("Please input error code by the hexadecimal number. ( Range: To LONG type maximum value )")
             Exit Sub
         End If
 
         'The GetErrorMessage method is executed.
-        lReturnValue = AxActSupportMsg1.GetErrorMessage(Val("&H" & Trim(Text_ReturnValue.Text)), szMessage)
+        lReturnValue = AxActSupportMsg1.GetErrorMessage(Val("&H" & Text_ReturnValue.Text.Trim()), szMessage)
         'The trouble shot message is displayed in the message box when succeeding in
         'GetErrorMessage.
         'Whether GetErrorMessage succeeded is checked.
@@ -1576,12 +1577,13 @@ Public Class frmRunPage
     End Sub
 #End Region
 #Region " [[[Processing of Open button]]] "
-    Private Sub tbConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbConnect.Click
+    Private Sub tbConnect_Click(sender As System.Object, e As System.EventArgs) Handles tbConnect.Click
         MonitorStart()
     End Sub
     Private Sub MonitorStart()
         Dim lReturnValue As Integer 'ReturnValue
         'The logical station number is set.
+        MessageBox.Show(Text_LogicalStationNumber.Text)
         AxActUtlType1.ActLogicalStationNumber = CInt(Text_LogicalStationNumber.Text)
         'The password is set
         AxActUtlType1.ActPassword = txt_DeviceDataBlock.Text
@@ -1624,7 +1626,7 @@ Public Class frmRunPage
     End Sub
 #End Region
 #Region " [[[Processing of Close button]]] "
-    Private Sub tbDisconnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbDisconnect.Click
+    Private Sub tbDisconnect_Click(sender As System.Object, e As System.EventArgs) Handles tbDisconnect.Click
         MonitorStop()
         ClearDisplay()
         tbConnect.Enabled = True
@@ -1670,6 +1672,8 @@ Public Class frmRunPage
                 cnt1 = Val(txtCounter1.Text)
                 cnt1 += 1
                 txtCounter1.Text = cnt1
+
+                AutoPrintOneByOne() ' Print each label
                 For Each li In lvPrint.Items
                     If li.SubItems(0).Text = txtModel.Text And li.SubItems(1).Text = txtOrder.Text Then
                         li.SubItems(10).Text() = cnt1
@@ -1683,6 +1687,7 @@ Public Class frmRunPage
                 AutoPrintOneByOne() ' Print each label
                 UpdateCounter()
                 lbCounter.Refresh()
+                'AutoCounterUp()
             Else
                 NotifyIcon1.BalloonTipText = "Automatic Lot Print in Progress...."
                 NotifyIcon1.ShowBalloonTip(500)
@@ -1745,11 +1750,11 @@ Public Class frmRunPage
                 UpdateSerial()
                 lbSerialNo1.Refresh()
                 AutoSerialUp()
-               
+
             End If
         End If
     End Sub
-    Private Sub txtOrder_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtOrder.TextChanged
+    Private Sub txtOrder_TextChanged(sender As Object, e As System.EventArgs) Handles txtOrder.TextChanged
         If Val(txtOrder.Text) <> 0 Then
             btOK.BackColor = Color.Lime
             lbModel.Text = txtModel.Text
@@ -1787,7 +1792,7 @@ Public Class frmRunPage
         Next
     End Sub
 #End Region
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
         tsToday.Text = Now
         If TimeString >= "08:00:00" And TimeString < "20:00:00" Then
             LoadShiftA()
@@ -1800,25 +1805,25 @@ Public Class frmRunPage
             ResetCounter()
         End If
     End Sub
-    Private Sub NotifyIcon1_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         Me.Show()
     End Sub
-    Private Sub lvPrint_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+    Private Sub lvPrint_MouseClick(sender As Object, e As System.Windows.Forms.MouseEventArgs)
         lvPrint.FullRowSelect = True
     End Sub
-    Private Sub dgvLabelPrint_CellMouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvLabelPrint.CellMouseClick
+    Private Sub dgvLabelPrint_CellMouseClick(sender As Object, e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles dgvLabelPrint.CellMouseClick
         On Error Resume Next
         dgvLabelPrint.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.LightBlue
     End Sub
-    Private Sub dgvLabelPrint_RowLeave(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLabelPrint.RowLeave
+    Private Sub dgvLabelPrint_RowLeave(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLabelPrint.RowLeave
         On Error Resume Next
         dgvLabelPrint.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
     End Sub
-    Private Sub dgvLabelPrint_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvLabelPrint.RowsAdded
+    Private Sub dgvLabelPrint_RowsAdded(sender As Object, e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles dgvLabelPrint.RowsAdded
         RunItemNo()
     End Sub
 #Region "[[ menubar ]]"
-    Private Sub mnuZPLIIManual_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuZPLIIManual.Click
+    Private Sub mnuZPLIIManual_Click(sender As System.Object, e As System.EventArgs) Handles mnuZPLIIManual.Click
         Dim proc As New Process()
         ZM400_Name = My.Application.Info.DirectoryPath
         'ZM400_Name = "D:\ASEnC\Tax_Invoice"
@@ -1838,7 +1843,7 @@ Public Class frmRunPage
         proc.Close()
         proc.Dispose()
     End Sub
-    Private Sub mnuZM400Manual_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuZM400Manual.Click
+    Private Sub mnuZM400Manual_Click(sender As System.Object, e As System.EventArgs) Handles mnuZM400Manual.Click
         Dim proc As New Process()
         ZM400_Name = My.Application.Info.DirectoryPath
         'ZM400_Name = "D:\ASEnC\Tax_Invoice"
@@ -1858,7 +1863,7 @@ Public Class frmRunPage
         proc.Close()
         proc.Dispose()
     End Sub
-    Private Sub mnuZM400Quick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuZM400Quick.Click
+    Private Sub mnuZM400Quick_Click(sender As System.Object, e As System.EventArgs) Handles mnuZM400Quick.Click
         Dim proc As New Process()
         ZM400_Name = My.Application.Info.DirectoryPath
         'ZM400_Name = "D:\ASEnC\Tax_Invoice"
@@ -1879,38 +1884,38 @@ Public Class frmRunPage
         proc.Close()
         proc.Dispose()
     End Sub
-    Private Sub mnuModelNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuModelNo.Click
+    Private Sub mnuModelNo_Click(sender As System.Object, e As System.EventArgs) Handles mnuModelNo.Click
         frmAddModel.Show()
     End Sub
-    Private Sub mnuAddOrder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuAddOrder.Click
+    Private Sub mnuAddOrder_Click(sender As System.Object, e As System.EventArgs) Handles mnuAddOrder.Click
         frmAddOrder.Show()
     End Sub
-    Private Sub mnuPartNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPartNo.Click
+    Private Sub mnuPartNo_Click(sender As System.Object, e As System.EventArgs) Handles mnuPartNo.Click
         frmAddPartNo.Show()
     End Sub
-    Private Sub mnuCustomer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuCustomer.Click
+    Private Sub mnuCustomer_Click(sender As System.Object, e As System.EventArgs) Handles mnuCustomer.Click
         frmAddCustomer.Show()
     End Sub
-    Private Sub mnuRounting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRounting.Click
+    Private Sub mnuRounting_Click(sender As System.Object, e As System.EventArgs) Handles mnuRounting.Click
         frmRouting.Show()
     End Sub
-    Private Sub mnuShift_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuShift.Click
+    Private Sub mnuShift_Click(sender As System.Object, e As System.EventArgs) Handles mnuShift.Click
         frmShift.Show()
     End Sub
-    Private Sub mnuPrintLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintLabel.Click
+    Private Sub mnuPrintLabel_Click(sender As System.Object, e As System.EventArgs) Handles mnuPrintLabel.Click
         frmPrinting.Show()
     End Sub
-    Private Sub mnuRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRefresh.Click
+    Private Sub mnuRefresh_Click(sender As System.Object, e As System.EventArgs) Handles mnuRefresh.Click
         LoadRounting()
         LoadShiftDate()
         ShowDataLog()
     End Sub
-    Private Sub mnuManual_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuManual.Click
+    Private Sub mnuManual_Click(sender As System.Object, e As System.EventArgs) Handles mnuManual.Click
         mnuManual.Checked = Not mnuManual.Checked
         ManualAuto(mnuManual.Checked)
         frmUserPass.Show()
     End Sub
-    Private Sub mnuAuto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuAuto.Click
+    Private Sub mnuAuto_Click(sender As System.Object, e As System.EventArgs) Handles mnuAuto.Click
         mnuAuto.Checked = Not mnuAuto.Checked
         ManualAuto(Not mnuAuto.Checked)
         TabDatalogger.TabPages.Remove(TabManual)
@@ -1919,7 +1924,7 @@ Public Class frmRunPage
         frmUserPass.txtID.Clear()
         frmUserPass.txtPass.Clear()
     End Sub
-    Private Sub mnuExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuExit.Click
+    Private Sub mnuExit_Click(sender As System.Object, e As System.EventArgs) Handles mnuExit.Click
         Dim msg As String
         Dim title As String
         Dim style As MsgBoxStyle
@@ -1940,12 +1945,12 @@ Public Class frmRunPage
             Application.Exit()
         End If
     End Sub
-    Private Sub mnuPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrint.Click
+    Private Sub mnuPrint_Click(sender As System.Object, e As System.EventArgs) Handles mnuPrint.Click
         tbPrint_Click(e, e)
     End Sub
 #End Region
 #Region "[[ toolbar ]]"
-    Private Sub tbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbPrint.Click
+    Private Sub tbPrint_Click(sender As System.Object, e As System.EventArgs) Handles tbPrint.Click
         'Try
         '    If MessageBox.Show("Do you want to print label?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
         '        ManualPrintLabel()
@@ -1956,7 +1961,7 @@ Public Class frmRunPage
         '    MsgBox("Error from " + ex.Message, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Error to Print Label")
         'End Try
     End Sub
-    Private Sub tbExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbExit.Click
+    Private Sub tbExit_Click(sender As System.Object, e As System.EventArgs) Handles tbExit.Click
         Dim msg As String
         Dim title As String
         Dim style As MsgBoxStyle
@@ -1978,7 +1983,7 @@ Public Class frmRunPage
             Application.Exit()
         End If
     End Sub
-    Private Sub tbExitmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbExitmenu.Click
+    Private Sub tbExitmenu_Click(sender As System.Object, e As System.EventArgs) Handles tbExitmenu.Click
         Dim msg As String
         Dim title As String
         Dim style As MsgBoxStyle
@@ -2000,7 +2005,7 @@ Public Class frmRunPage
             Application.Exit()
         End If
     End Sub
-    Private Sub tbEject_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbEject.Click
+    Private Sub tbEject_Click(sender As System.Object, e As System.EventArgs) Handles tbEject.Click
         Try
             If MessageBox.Show("Do you want to eject model from list?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 For Each lvItem As ListViewItem In lvPrint.SelectedItems
@@ -2013,7 +2018,7 @@ Public Class frmRunPage
         End Try
 
     End Sub
-    Private Sub tbConfig_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbConfig.Click
+    Private Sub tbConfig_Click(sender As System.Object, e As System.EventArgs) Handles tbConfig.Click
         frmPrinting.Show()
     End Sub
 #End Region
@@ -2023,14 +2028,14 @@ Public Class frmRunPage
         tbPrint.Enabled = bManual
         mnuPrint.Enabled = bManual
     End Sub
-    Private Sub lvPrint_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles lvPrint.KeyUp
+    Private Sub lvPrint_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles lvPrint.KeyUp
         If lvPrint.SelectedItems.Count > 0 Then
             If e.KeyCode = Keys.Delete Then
                 lvPrint.SelectedItems(0).Remove()
             End If
         End If
     End Sub
-    Private Sub cmbModel_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbModel.SelectedIndexChanged
+    Private Sub cmbModel_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbModel.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
             If (IsNumeric(lbAutoModel.Text)) Then
@@ -2048,7 +2053,7 @@ Public Class frmRunPage
             End If
         End If
     End Sub
-    Private Sub cmbOrder_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbOrder.SelectedIndexChanged
+    Private Sub cmbOrder_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbOrder.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
             If (IsNumeric(lbAutoModel.Text)) Then
@@ -2066,11 +2071,11 @@ Public Class frmRunPage
             End If
         End If
     End Sub
-    Private Sub TabManual_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles TabManual.ControlAdded
+    Private Sub TabManual_ControlAdded(sender As System.Object, e As System.Windows.Forms.ControlEventArgs) Handles TabManual.ControlAdded
         ShowModel()
         ShowPrintManual()
     End Sub
-    Private Sub lvPrint_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles lvPrint.LostFocus
+    Private Sub lvPrint_LostFocus(sender As Object, e As System.EventArgs) Handles lvPrint.LostFocus
         lvPrint.BackColor = Color.White
     End Sub
     Private Sub tbLotPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbLotPrint.Click
@@ -2095,5 +2100,4 @@ Public Class frmRunPage
             MsgBox("Error from " + ex.Message, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Error to Print Label")
         End Try
     End Sub
-
 End Class

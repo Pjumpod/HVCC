@@ -405,6 +405,8 @@ Partial Class frmRunPage
         Me.GroupBox4.Controls.Add(Me.Label32)
         Me.GroupBox4.Controls.Add(Me.lbgsdb)
         Me.GroupBox4.Controls.Add(Me.Label30)
+	Me.GroupBox4.Controls.Add(Me.AxActSupportMsg1)
+        Me.GroupBox4.Controls.Add(Me.AxActUtlType1)
         Me.GroupBox4.Controls.Add(Me.lbCode)
         Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.txtCustomer1)
@@ -752,7 +754,7 @@ Partial Class frmRunPage
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.btOK)
         Me.GroupBox3.Controls.Add(Me.lbShiftFinish)
         Me.GroupBox3.Controls.Add(Me.lbShiftStart)
@@ -1358,8 +1360,8 @@ Partial Class frmRunPage
         'List1
         '
         Me.List1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.List1.BackColor = System.Drawing.SystemColors.Window
         Me.List1.Cursor = System.Windows.Forms.Cursors.Default
         Me.List1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -1696,16 +1698,20 @@ Partial Class frmRunPage
         'AxActSupportMsg1
         '
         Me.AxActSupportMsg1.Enabled = True
-        Me.AxActSupportMsg1.Location = New System.Drawing.Point(0, 0)
+        Me.AxActSupportMsg1.Location = New System.Drawing.Point(742, 175)
         Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
-        Me.AxActSupportMsg1.TabIndex = 0
+        Me.AxActSupportMsg1.OcxState = CType(resources.GetObject("AxActSupportMsg1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxActSupportMsg1.Size = New System.Drawing.Size(32, 32)
+        Me.AxActSupportMsg1.TabIndex = 50
         '
         'AxActUtlType1
         '
         Me.AxActUtlType1.Enabled = True
-        Me.AxActUtlType1.Location = New System.Drawing.Point(0, 0)
+        Me.AxActUtlType1.Location = New System.Drawing.Point(704, 175)
         Me.AxActUtlType1.Name = "AxActUtlType1"
-        Me.AxActUtlType1.TabIndex = 0
+        Me.AxActUtlType1.OcxState = CType(resources.GetObject("AxActUtlType1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxActUtlType1.Size = New System.Drawing.Size(32, 32)
+        Me.AxActUtlType1.TabIndex = 49
         '
         'StatusStrip1
         '
@@ -1945,7 +1951,7 @@ Partial Class frmRunPage
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmRunPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Label Print Management V 1.7 - LINE 1"
+        Me.Text = "Label Print Management V 1.8"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

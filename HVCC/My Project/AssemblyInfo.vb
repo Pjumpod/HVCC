@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("HVCC")> 
 <Assembly: AssemblyDescription("Zebra ZM400 Print Label")> 
 <Assembly: AssemblyCompany("AS Engineering and Consulting")> 
-<Assembly: AssemblyProduct("HVCC Printing Software Line 1")> 
+<Assembly: AssemblyProduct("HVCC Printing Software")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
