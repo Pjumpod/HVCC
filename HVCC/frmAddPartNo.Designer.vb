@@ -46,6 +46,7 @@ Partial Class frmAddPartNo
         Me.txtDetail = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BrowserInPN = New System.Windows.Forms.Button()
         CType(Me.dgvAddPartNo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -56,8 +57,8 @@ Partial Class frmAddPartNo
         'dgvAddPartNo
         '
         Me.dgvAddPartNo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvAddPartNo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvAddPartNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvAddPartNo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
@@ -78,7 +79,7 @@ Partial Class frmAddPartNo
         '
         Me.txtPartNo.Location = New System.Drawing.Point(109, 26)
         Me.txtPartNo.Name = "txtPartNo"
-        Me.txtPartNo.Size = New System.Drawing.Size(212, 20)
+        Me.txtPartNo.Size = New System.Drawing.Size(443, 20)
         Me.txtPartNo.TabIndex = 19
         '
         'lbID
@@ -168,7 +169,8 @@ Partial Class frmAddPartNo
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.BrowserInPN)
         Me.GroupBox1.Controls.Add(Me.txtAutoModel)
         Me.GroupBox1.Controls.Add(Me.txtCode)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -190,16 +192,16 @@ Partial Class frmAddPartNo
         '
         'txtAutoModel
         '
-        Me.txtAutoModel.Location = New System.Drawing.Point(260, 135)
+        Me.txtAutoModel.Location = New System.Drawing.Point(259, 136)
         Me.txtAutoModel.Name = "txtAutoModel"
-        Me.txtAutoModel.Size = New System.Drawing.Size(61, 20)
+        Me.txtAutoModel.Size = New System.Drawing.Size(243, 20)
         Me.txtAutoModel.TabIndex = 33
         '
         'txtCode
         '
-        Me.txtCode.Location = New System.Drawing.Point(260, 111)
+        Me.txtCode.Location = New System.Drawing.Point(259, 111)
         Me.txtCode.Name = "txtCode"
-        Me.txtCode.Size = New System.Drawing.Size(61, 20)
+        Me.txtCode.Size = New System.Drawing.Size(292, 20)
         Me.txtCode.TabIndex = 32
         '
         'Label6
@@ -239,7 +241,7 @@ Partial Class frmAddPartNo
         Me.txtDetail.Location = New System.Drawing.Point(109, 52)
         Me.txtDetail.Multiline = True
         Me.txtDetail.Name = "txtDetail"
-        Me.txtDetail.Size = New System.Drawing.Size(212, 54)
+        Me.txtDetail.Size = New System.Drawing.Size(443, 54)
         Me.txtDetail.TabIndex = 26
         '
         'Label4
@@ -259,6 +261,15 @@ Partial Class frmAddPartNo
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "Quantity :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'BrowserInPN
+        '
+        Me.BrowserInPN.Location = New System.Drawing.Point(500, 135)
+        Me.BrowserInPN.Name = "BrowserInPN"
+        Me.BrowserInPN.Size = New System.Drawing.Size(52, 23)
+        Me.BrowserInPN.TabIndex = 34
+        Me.BrowserInPN.Text = "Browse"
+        Me.BrowserInPN.UseVisualStyleBackColor = True
         '
         'frmAddPartNo
         '
@@ -307,4 +318,5 @@ Partial Class frmAddPartNo
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtAutoModel As System.Windows.Forms.TextBox
     Friend WithEvents txtCode As System.Windows.Forms.TextBox
+    Friend WithEvents BrowserInPN As System.Windows.Forms.Button
 End Class

@@ -11,6 +11,6 @@ Module Module1
     Public dsECount As New DataSet()
     Public da As New OleDb.OleDbDataAdapter
     Public Sql As String
-    Public connStr As String = ConfigurationSettings.AppSettings("dbConn")
+    Public connStr As String = System.Configuration.ConfigurationManager.AppSettings("dbConn")
     Public Conndb As New OleDb.OleDbConnection(connStr)
 End Module

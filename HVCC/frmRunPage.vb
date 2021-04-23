@@ -1120,6 +1120,8 @@ Public Class frmRunPage
                 Label55X25QR()
             ElseIf rbEachMatrix.Checked = True Then
                 Label55X25Matrix()
+            ElseIf rbEachZPL.Checked = True Then
+                ' TODO Function to read PRN file, replace word and print.
             End If
             NotifyIcon1.BalloonTipText = "Print Each Label in Progress...."
             NotifyIcon1.ShowBalloonTip(100)
@@ -1212,6 +1214,8 @@ Public Class frmRunPage
                     Label55X25QRManual()
                 ElseIf rbEachMatrix.Checked Then
                     Label55X25MatrixManual()
+                ElseIf rbEachZPL.Checked = True Then
+                    ' TODO Function to read PRN file, replace word and print.
                 End If
                 SaveDataLogManual()
                 'UpdateManualCounter()
@@ -2099,5 +2103,20 @@ Public Class frmRunPage
         Catch ex As Exception
             MsgBox("Error from " + ex.Message, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Error to Print Label")
         End Try
+    End Sub
+
+    Private Sub Browser1_Click(sender As System.Object, e As System.EventArgs) Handles Browser1.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+        ' Dim strFileName As String
+
+        fd.Title = "Find ZPL/PRN file"
+        fd.InitialDirectory = "C:\"
+        fd.Filter = "PRN files (*.prn)|*.prn|ZPL files (*.zpl)|*.zpl"
+        fd.FilterIndex = 1
+        fd.RestoreDirectory = True
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            cmbAutomodel.Text = fd.FileName
+        End If
     End Sub
 End Class

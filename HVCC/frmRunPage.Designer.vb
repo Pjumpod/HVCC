@@ -24,9 +24,9 @@ Partial Class frmRunPage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRunPage))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tbPrint = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tbLotPrint = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,6 +52,8 @@ Partial Class frmRunPage
         Me.Label32 = New System.Windows.Forms.Label()
         Me.lbgsdb = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
+        Me.AxActSupportMsg1 = New AxActSupportMsgLib.AxActSupportMsg()
+        Me.AxActUtlType1 = New AxActUtlTypeLib.AxActUtlType()
         Me.lbCode = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtCustomer1 = New System.Windows.Forms.TextBox()
@@ -168,8 +170,6 @@ Partial Class frmRunPage
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvLabelPrint = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AxActSupportMsg1 = New AxActSupportMsgLib.AxActSupportMsg()
-        Me.AxActUtlType1 = New AxActUtlTypeLib.AxActUtlType()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsToday = New System.Windows.Forms.ToolStripStatusLabel()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
@@ -202,6 +202,7 @@ Partial Class frmRunPage
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Browser1 = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -214,6 +215,8 @@ Partial Class frmRunPage
         Me.TabDatalogger.SuspendLayout()
         Me.TabAuto.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabManual.SuspendLayout()
@@ -228,8 +231,6 @@ Partial Class frmRunPage
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvLabelPrint, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -347,7 +348,7 @@ Partial Class frmRunPage
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl3)
         Me.SplitContainer1.Size = New System.Drawing.Size(1284, 678)
-        Me.SplitContainer1.SplitterDistance = 358
+        Me.SplitContainer1.SplitterDistance = 385
         Me.SplitContainer1.TabIndex = 21
         '
         'SplitContainer2
@@ -364,7 +365,7 @@ Partial Class frmRunPage
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.TabBarcode)
-        Me.SplitContainer2.Size = New System.Drawing.Size(1284, 358)
+        Me.SplitContainer2.Size = New System.Drawing.Size(1284, 385)
         Me.SplitContainer2.SplitterDistance = 815
         Me.SplitContainer2.TabIndex = 0
         '
@@ -376,7 +377,7 @@ Partial Class frmRunPage
         Me.TabDatalogger.Location = New System.Drawing.Point(0, 0)
         Me.TabDatalogger.Name = "TabDatalogger"
         Me.TabDatalogger.SelectedIndex = 0
-        Me.TabDatalogger.Size = New System.Drawing.Size(811, 354)
+        Me.TabDatalogger.Size = New System.Drawing.Size(811, 381)
         Me.TabDatalogger.TabIndex = 0
         '
         'TabAuto
@@ -405,7 +406,7 @@ Partial Class frmRunPage
         Me.GroupBox4.Controls.Add(Me.Label32)
         Me.GroupBox4.Controls.Add(Me.lbgsdb)
         Me.GroupBox4.Controls.Add(Me.Label30)
-	Me.GroupBox4.Controls.Add(Me.AxActSupportMsg1)
+        Me.GroupBox4.Controls.Add(Me.AxActSupportMsg1)
         Me.GroupBox4.Controls.Add(Me.AxActUtlType1)
         Me.GroupBox4.Controls.Add(Me.lbCode)
         Me.GroupBox4.Controls.Add(Me.Label19)
@@ -518,6 +519,24 @@ Partial Class frmRunPage
         Me.Label30.Size = New System.Drawing.Size(71, 13)
         Me.Label30.TabIndex = 55
         Me.Label30.Text = "GSDB Code :"
+        '
+        'AxActSupportMsg1
+        '
+        Me.AxActSupportMsg1.Enabled = True
+        Me.AxActSupportMsg1.Location = New System.Drawing.Point(742, 175)
+        Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
+        Me.AxActSupportMsg1.OcxState = CType(resources.GetObject("AxActSupportMsg1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxActSupportMsg1.Size = New System.Drawing.Size(32, 32)
+        Me.AxActSupportMsg1.TabIndex = 50
+        '
+        'AxActUtlType1
+        '
+        Me.AxActUtlType1.Enabled = True
+        Me.AxActUtlType1.Location = New System.Drawing.Point(704, 175)
+        Me.AxActUtlType1.Name = "AxActUtlType1"
+        Me.AxActUtlType1.OcxState = CType(resources.GetObject("AxActUtlType1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxActUtlType1.Size = New System.Drawing.Size(32, 32)
+        Me.AxActUtlType1.TabIndex = 49
         '
         'lbCode
         '
@@ -754,7 +773,7 @@ Partial Class frmRunPage
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.btOK)
         Me.GroupBox3.Controls.Add(Me.lbShiftFinish)
         Me.GroupBox3.Controls.Add(Me.lbShiftStart)
@@ -843,6 +862,7 @@ Partial Class frmRunPage
         '
         'TabManual
         '
+        Me.TabManual.Controls.Add(Me.Browser1)
         Me.TabManual.Controls.Add(Me.cmbAutomodel)
         Me.TabManual.Controls.Add(Me.Label36)
         Me.TabManual.Controls.Add(Me.Label35)
@@ -876,7 +896,7 @@ Partial Class frmRunPage
         Me.TabManual.Location = New System.Drawing.Point(4, 22)
         Me.TabManual.Name = "TabManual"
         Me.TabManual.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabManual.Size = New System.Drawing.Size(803, 328)
+        Me.TabManual.Size = New System.Drawing.Size(803, 355)
         Me.TabManual.TabIndex = 1
         Me.TabManual.Text = "Manual Print Mode"
         Me.TabManual.UseVisualStyleBackColor = True
@@ -1157,7 +1177,7 @@ Partial Class frmRunPage
         Me.TabBarcode.Location = New System.Drawing.Point(0, 0)
         Me.TabBarcode.Name = "TabBarcode"
         Me.TabBarcode.SelectedIndex = 0
-        Me.TabBarcode.Size = New System.Drawing.Size(461, 354)
+        Me.TabBarcode.Size = New System.Drawing.Size(461, 381)
         Me.TabBarcode.TabIndex = 23
         '
         'TabPage3
@@ -1167,7 +1187,7 @@ Partial Class frmRunPage
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(453, 328)
+        Me.TabPage3.Size = New System.Drawing.Size(453, 355)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Label Configulation"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1185,7 +1205,7 @@ Partial Class frmRunPage
         Me.GroupBox5.Controls.Add(Me.rbEachMatrix)
         Me.GroupBox5.Location = New System.Drawing.Point(6, 168)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(441, 154)
+        Me.GroupBox5.Size = New System.Drawing.Size(441, 181)
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Each Print Bar Code Type"
@@ -1360,8 +1380,8 @@ Partial Class frmRunPage
         'List1
         '
         Me.List1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.List1.BackColor = System.Drawing.SystemColors.Window
         Me.List1.Cursor = System.Windows.Forms.Cursors.Default
         Me.List1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -1536,7 +1556,7 @@ Partial Class frmRunPage
         Me.TabControl3.Location = New System.Drawing.Point(0, 0)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(1280, 312)
+        Me.TabControl3.Size = New System.Drawing.Size(1280, 285)
         Me.TabControl3.TabIndex = 1
         '
         'TabPage1
@@ -1545,7 +1565,7 @@ Partial Class frmRunPage
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1272, 286)
+        Me.TabPage1.Size = New System.Drawing.Size(1272, 259)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Queue"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -1559,7 +1579,7 @@ Partial Class frmRunPage
         Me.lvPrint.HideSelection = False
         Me.lvPrint.Location = New System.Drawing.Point(3, 3)
         Me.lvPrint.Name = "lvPrint"
-        Me.lvPrint.Size = New System.Drawing.Size(1266, 280)
+        Me.lvPrint.Size = New System.Drawing.Size(1266, 253)
         Me.lvPrint.StateImageList = Me.ImageList1
         Me.lvPrint.TabIndex = 0
         Me.lvPrint.UseCompatibleStateImageBehavior = False
@@ -1657,35 +1677,35 @@ Partial Class frmRunPage
         'dgvLabelPrint
         '
         Me.dgvLabelPrint.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvLabelPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.dgvLabelPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvLabelPrint.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvLabelPrint.Location = New System.Drawing.Point(3, 3)
         Me.dgvLabelPrint.Name = "dgvLabelPrint"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvLabelPrint.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvLabelPrint.Size = New System.Drawing.Size(1266, 280)
         Me.dgvLabelPrint.TabIndex = 14
@@ -1694,24 +1714,6 @@ Partial Class frmRunPage
         '
         Me.Column1.HeaderText = "No."
         Me.Column1.Name = "Column1"
-        '
-        'AxActSupportMsg1
-        '
-        Me.AxActSupportMsg1.Enabled = True
-        Me.AxActSupportMsg1.Location = New System.Drawing.Point(742, 175)
-        Me.AxActSupportMsg1.Name = "AxActSupportMsg1"
-        Me.AxActSupportMsg1.OcxState = CType(resources.GetObject("AxActSupportMsg1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxActSupportMsg1.Size = New System.Drawing.Size(32, 32)
-        Me.AxActSupportMsg1.TabIndex = 50
-        '
-        'AxActUtlType1
-        '
-        Me.AxActUtlType1.Enabled = True
-        Me.AxActUtlType1.Location = New System.Drawing.Point(704, 175)
-        Me.AxActUtlType1.Name = "AxActUtlType1"
-        Me.AxActUtlType1.OcxState = CType(resources.GetObject("AxActUtlType1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxActUtlType1.Size = New System.Drawing.Size(32, 32)
-        Me.AxActUtlType1.TabIndex = 49
         '
         'StatusStrip1
         '
@@ -1937,6 +1939,15 @@ Partial Class frmRunPage
         '
         Me.Timer3.Interval = 1000
         '
+        'Browser1
+        '
+        Me.Browser1.Location = New System.Drawing.Point(332, 273)
+        Me.Browser1.Name = "Browser1"
+        Me.Browser1.Size = New System.Drawing.Size(75, 22)
+        Me.Browser1.TabIndex = 76
+        Me.Browser1.Text = "Browse"
+        Me.Browser1.UseVisualStyleBackColor = True
+        '
         'frmRunPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1967,6 +1978,8 @@ Partial Class frmRunPage
         Me.TabAuto.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1987,8 +2000,6 @@ Partial Class frmRunPage
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         CType(Me.dgvLabelPrint, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxActSupportMsg1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxActUtlType1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
@@ -2173,4 +2184,5 @@ Partial Class frmRunPage
     Friend WithEvents rbEachZPL As System.Windows.Forms.RadioButton
     Private WithEvents AxActUtlType1 As AxActUtlTypeLib.AxActUtlType
     Private WithEvents AxActSupportMsg1 As AxActSupportMsgLib.AxActSupportMsg
+    Friend WithEvents Browser1 As System.Windows.Forms.Button
 End Class

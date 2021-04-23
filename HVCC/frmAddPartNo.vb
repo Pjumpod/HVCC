@@ -201,4 +201,19 @@ Public Class frmAddPartNo
         numQuantity.Value = 0
         numLotSize.Value = 0
     End Sub
+
+    Private Sub BrowserInPN_Click(sender As System.Object, e As System.EventArgs) Handles BrowserInPN.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+        ' Dim strFileName As String
+
+        fd.Title = "Find ZPL/PRN file"
+        fd.InitialDirectory = "C:\"
+        fd.Filter = "PRN files (*.prn)|*.prn|ZPL files (*.zpl)|*.zpl"
+        fd.FilterIndex = 1
+        fd.RestoreDirectory = True
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            txtAutoModel.Text = fd.FileName
+        End If
+    End Sub
 End Class
