@@ -1122,12 +1122,51 @@ Public Class frmRunPage
                 Label55X25Matrix()
             ElseIf rbEachZPL.Checked = True Then
                 ' TODO Function to read PRN file, replace word and print.
+                LabelPRN(txtCustomer1.Text, txtCustomer2.Text, txtPartNo1.Text, lbCode.Text, lbCounter.Text, lbAutoModel.Text)
             End If
             NotifyIcon1.BalloonTipText = "Print Each Label in Progress...."
             NotifyIcon1.ShowBalloonTip(100)
             SaveDataLogAuto()
             ShowDataLog()
         End If
+    End Sub
+    Private Sub LabelPRN(customer1 As String, customer2 As String, PartNo As String, Code As String, Counter As String, PRN As String)
+        If My.Computer.FileSystem.FileExists(PRN) Then
+            Dim reader = My.Computer.FileSystem.ReadAllText(PRN, System.Text.Encoding.ASCII)
+            reader = reader.ToUpper()
+            'Dim Cus11 As String = Format(Microsoft.VisualBasic.Left(customer1, 4))
+            'Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(customer1, 5, 6))
+            'Dim Cus13 As String = Format(Microsoft.VisualBasic.Mid$(customer1, 12)) ', 2))
+            customer1 = customer1.Replace(" ", "")
+            Dim Cus11 As String
+            Dim Cus12 As String
+            Dim Cus13 As String
+            If (customer1.Contains("-")) Then
+                Dim words As String() = customer1.Split(New Char() {"-"c})
+                Cus11 = words(0)
+                Cus12 = words(1)
+                Cus13 = words(2)
+            Else
+                Cus11 = Format(Microsoft.VisualBasic.Left(customer1, 4))
+                Cus12 = Format(Microsoft.VisualBasic.Mid$(customer1, 5, 6))
+                Cus13 = Format(Microsoft.VisualBasic.Mid$(customer1, 12))
+            End If
+            Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(customer2, 4))
+            Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(customer2, 1))
+            Dim Cus1Format As String = Cus11 & " " & Cus12 & " " & Cus13
+            reader = reader.Replace("<CUSTOMER1>", Cus1Format)
+            reader = reader.Replace("<CUSTOMER2>", customer2)
+            reader = reader.Replace("<PN>", PartNo)
+            reader = reader.Replace("<CODE>", Code)
+            reader = reader.Replace("<GSGD>", lbgsdb.Text)
+            reader = reader.Replace("<SHIFT>", lbShift.Text)
+            reader = reader.Replace("<SN>", Counter)
+            reader = reader.Replace("<DATETIME>", tsToday.Text)
+            SendToPrinter("ZEBRA ZM400 printing", reader.ToString, cmbEachPrinter.Text)
+        Else
+            MsgBox(PRN & " not found.")
+        End If
+
     End Sub
     Private Sub Label55X25Matrix()
         Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(txtCustomer2.Text, 4))
@@ -1216,6 +1255,7 @@ Public Class frmRunPage
                     Label55X25MatrixManual()
                 ElseIf rbEachZPL.Checked = True Then
                     ' TODO Function to read PRN file, replace word and print.
+                    LabelPRN(cmbCustomer1.Text, cmbCustomer2.Text, cmbPartNo.Text, cmbCode.Text, cmbCounter.Text, cmbAutomodel.Text)
                 End If
                 SaveDataLogManual()
                 'UpdateManualCounter()

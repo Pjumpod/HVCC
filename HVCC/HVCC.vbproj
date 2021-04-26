@@ -210,6 +210,7 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAddCustomer.resx">
       <DependentUpon>frmAddCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddModel.resx">
       <DependentUpon>frmAddModel.vb</DependentUpon>
