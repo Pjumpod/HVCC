@@ -7,7 +7,8 @@ Imports System.Configuration
 Imports System.Data.OleDb
 Imports System.Drawing.Printing
 
-
+Imports System.Threading
+Imports System.Threading.Tasks
 
 Public Class frmRunPage
     Dim cnt1 As Integer = 0
@@ -27,6 +28,14 @@ Public Class frmRunPage
     Const ELEMENT_SIZE_REALNUMBER = 2   'Size of elements, when write/read 'Real Number' data to the PLC.
 
     Dim objAsciiCodePageEncoding As Encoding = Encoding.Default  'Create an instance for encoding to(or decoding from) ASCII Code Page.
+
+    Private Sub DisableButtonAsync(ByVal seconds As Int32)
+        Me.btOK.Enabled = False
+
+        Dim uiScheduler = TaskScheduler.FromCurrentSynchronizationContext()
+
+        Task.Factory.StartNew(Sub() Thread.Sleep(seconds * 1000)).ContinueWith(Sub(t) Me.btOK.Enabled = True, uiScheduler)
+    End Sub
 
 #End Region
     Private Sub frmRunPage_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -1113,6 +1122,7 @@ Public Class frmRunPage
     End Sub
 
     Private Sub AutoPrintOneByOne()
+        ' Me.DisableButtonAsync(45)
         If lbPrintUse.Text = "NO" Then
             Exit Sub
         Else
@@ -1717,7 +1727,7 @@ Public Class frmRunPage
                 cnt1 += 1
                 txtCounter1.Text = cnt1
 
-                AutoPrintOneByOne() ' Print each label
+                ' AutoPrintOneByOne() ' Print each label
                 For Each li In lvPrint.Items
                     If li.SubItems(0).Text = txtModel.Text And li.SubItems(1).Text = txtOrder.Text Then
                         li.SubItems(10).Text() = cnt1
