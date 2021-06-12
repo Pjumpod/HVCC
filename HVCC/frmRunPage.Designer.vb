@@ -1997,7 +1997,7 @@ Partial Class frmRunPage
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmRunPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Label Print Management V 1.9.2"
+        Me.Text = "Label Print Management V 1.9.3"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
