@@ -69,6 +69,7 @@ Public Class frmRunPage
         TabDatalogger.TabPages.Remove(TabManual)
         TabBarcode.TabPages.Remove(TabInfo)
         bConnectFlg = False
+        CompanyName.Text = "Hanon (Thailand) Co., LTD."
         ShowPrinter()
     End Sub
 #Region "[[  Transection Zone  ]]"
@@ -693,7 +694,8 @@ Public Class frmRunPage
         pText.AppendLine("^FWR") ' Rotate 90
         pText.AppendLine("^FO500,80") ' X,Y position
         pText.AppendLine("^A0,50,55")  ' font h,w
-        pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        'pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        pText.AppendLine("^FD" & CompanyName.Text & "^FS")
 
         pText.AppendLine("^FO430,80") ' X,Y position
         pText.AppendLine("^A0,40,35")  ' font h,w
@@ -781,7 +783,8 @@ Public Class frmRunPage
         pText.AppendLine("^FWR") ' Rotate 90
         pText.AppendLine("^FO500,80") ' X,Y position
         pText.AppendLine("^A0,50,55")  ' font h,w
-        pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        'pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        pText.AppendLine("^FD" & CompanyName.Text & "^FS")
 
         pText.AppendLine("^FO430,80") ' X,Y position
         pText.AppendLine("^A0,40,35")  ' font h,w
@@ -913,7 +916,8 @@ Public Class frmRunPage
         pText.AppendLine("^FWR") ' Rotate 90
         pText.AppendLine("^FO500,80") ' X,Y position
         pText.AppendLine("^A0,50,55")  ' font h,w
-        pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        'pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        pText.AppendLine("^FD" & CompanyName.Text & "^FS")
 
         pText.AppendLine("^FO430,80") ' X,Y position
         pText.AppendLine("^A0,40,35")  ' font h,w
@@ -1001,7 +1005,8 @@ Public Class frmRunPage
         pText.AppendLine("^FWR") ' Rotate 90
         pText.AppendLine("^FO500,80") ' X,Y position
         pText.AppendLine("^A0,50,55")  ' font h,w
-        pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        'pText.AppendLine("^FDHalla Visteon Climate Control(Thailand)Co.,Ltd.^FS") ' 
+        pText.AppendLine("^FD" & CompanyName.Text & "^FS")
 
         pText.AppendLine("^FO430,80") ' X,Y position
         pText.AppendLine("^A0,40,35")  ' font h,w
@@ -1147,28 +1152,29 @@ Public Class frmRunPage
             'Dim Cus11 As String = Format(Microsoft.VisualBasic.Left(customer1, 4))
             'Dim Cus12 As String = Format(Microsoft.VisualBasic.Mid$(customer1, 5, 6))
             'Dim Cus13 As String = Format(Microsoft.VisualBasic.Mid$(customer1, 12)) ', 2))
-            customer1 = customer1.Replace(" ", "")
-            Dim Cus11 As String
-            Dim Cus12 As String
-            Dim Cus13 As String
-            If (customer1.Contains("-")) Then
-                Dim words As String() = customer1.Split(New Char() {"-"c})
-                Cus11 = words(0)
-                Cus12 = words(1)
-                Cus13 = words(2)
-            Else
-                Cus11 = Format(Microsoft.VisualBasic.Left(customer1, 4))
-                Cus12 = Format(Microsoft.VisualBasic.Mid$(customer1, 5, 6))
-                Cus13 = Format(Microsoft.VisualBasic.Mid$(customer1, 12))
-            End If
-            Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(customer2, 4))
-            Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(customer2, 1))
-            Dim Cus1Format As String = Cus11 & " " & Cus12 & " " & Cus13
+            customer1 = customer1.Trim()
+            'Dim Cus11 As String
+            'Dim Cus12 As String
+            'Dim Cus13 As String
+            ' If (customer1.Contains("-")) Then
+            '   Dim words As String() = customer1.Split(New Char() {"-"c})
+            '  Cus11 = words(0)
+            ' Cus12 = words(1)
+            'Cus13 = words(2)
+            'Else
+            'Cus11 = Format(Microsoft.VisualBasic.Left(customer1, 4))
+            'Cus12 = Format(Microsoft.VisualBasic.Mid$(customer1, 5, 6))
+            'Cus13 = Format(Microsoft.VisualBasic.Mid$(customer1, 12))
+            'End If */
+            'Dim Cus21 As String = Format(Microsoft.VisualBasic.Left(customer2, 4))
+            'Dim Cus22 As String = Format(Microsoft.VisualBasic.Right(customer2, 1))
+            'Dim Cus1Format As String = Cus11 & " " & Cus12 & " " & Cus13
+            Dim Cus1Format As String = customer1.Trim()
             reader = reader.Replace("<CUSTOMER1>", Cus1Format)
             reader = reader.Replace("<CUSTOMER2>", customer2)
             reader = reader.Replace("<PN>", PartNo)
             reader = reader.Replace("<CODE>", Code)
-            reader = reader.Replace("<GSGD>", lbgsdb.Text)
+            reader = reader.Replace("<GSDB>", lbgsdb.Text)
             reader = reader.Replace("<SHIFT>", lbShift.Text)
             reader = reader.Replace("<SN>", Counter)
             reader = reader.Replace("<DATETIME>", tsToday.Text)

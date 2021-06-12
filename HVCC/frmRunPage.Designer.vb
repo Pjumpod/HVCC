@@ -24,9 +24,9 @@ Partial Class frmRunPage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRunPage))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tbPrint = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tbLotPrint = New System.Windows.Forms.ToolStripMenuItem()
@@ -87,6 +87,7 @@ Partial Class frmRunPage
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbRouting = New System.Windows.Forms.Label()
         Me.TabManual = New System.Windows.Forms.TabPage()
+        Me.Browser1 = New System.Windows.Forms.Button()
         Me.cmbAutomodel = New System.Windows.Forms.ComboBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
@@ -202,7 +203,9 @@ Partial Class frmRunPage
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Browser1 = New System.Windows.Forms.Button()
+        Me.SetupTab = New System.Windows.Forms.TabPage()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.CompanyName = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -234,6 +237,7 @@ Partial Class frmRunPage
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.SetupTab.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -388,7 +392,7 @@ Partial Class frmRunPage
         Me.TabAuto.Location = New System.Drawing.Point(4, 22)
         Me.TabAuto.Name = "TabAuto"
         Me.TabAuto.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabAuto.Size = New System.Drawing.Size(803, 328)
+        Me.TabAuto.Size = New System.Drawing.Size(803, 355)
         Me.TabAuto.TabIndex = 0
         Me.TabAuto.Text = "Auto Print Mode"
         Me.TabAuto.UseVisualStyleBackColor = True
@@ -434,7 +438,7 @@ Partial Class frmRunPage
         Me.GroupBox4.Controls.Add(Me.txtPartNo1)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 95)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(791, 227)
+        Me.GroupBox4.Size = New System.Drawing.Size(791, 254)
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Print information"
@@ -901,6 +905,15 @@ Partial Class frmRunPage
         Me.TabManual.Text = "Manual Print Mode"
         Me.TabManual.UseVisualStyleBackColor = True
         '
+        'Browser1
+        '
+        Me.Browser1.Location = New System.Drawing.Point(332, 273)
+        Me.Browser1.Name = "Browser1"
+        Me.Browser1.Size = New System.Drawing.Size(75, 22)
+        Me.Browser1.TabIndex = 76
+        Me.Browser1.Text = "Browse"
+        Me.Browser1.UseVisualStyleBackColor = True
+        '
         'cmbAutomodel
         '
         Me.cmbAutomodel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
@@ -1173,6 +1186,7 @@ Partial Class frmRunPage
         '
         Me.TabBarcode.Controls.Add(Me.TabPage3)
         Me.TabBarcode.Controls.Add(Me.TabInfo)
+        Me.TabBarcode.Controls.Add(Me.SetupTab)
         Me.TabBarcode.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabBarcode.Location = New System.Drawing.Point(0, 0)
         Me.TabBarcode.Name = "TabBarcode"
@@ -1358,7 +1372,7 @@ Partial Class frmRunPage
         Me.TabInfo.Location = New System.Drawing.Point(4, 22)
         Me.TabInfo.Name = "TabInfo"
         Me.TabInfo.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabInfo.Size = New System.Drawing.Size(453, 328)
+        Me.TabInfo.Size = New System.Drawing.Size(453, 355)
         Me.TabInfo.TabIndex = 1
         Me.TabInfo.Text = "Info"
         Me.TabInfo.UseVisualStyleBackColor = True
@@ -1388,7 +1402,7 @@ Partial Class frmRunPage
         Me.List1.Location = New System.Drawing.Point(10, 126)
         Me.List1.Name = "List1"
         Me.List1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.List1.Size = New System.Drawing.Size(432, 186)
+        Me.List1.Size = New System.Drawing.Size(432, 212)
         Me.List1.TabIndex = 46
         '
         'Text_Size
@@ -1669,7 +1683,7 @@ Partial Class frmRunPage
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1272, 286)
+        Me.TabPage2.Size = New System.Drawing.Size(1272, 259)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Data Logger"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1677,37 +1691,37 @@ Partial Class frmRunPage
         'dgvLabelPrint
         '
         Me.dgvLabelPrint.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvLabelPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.dgvLabelPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLabelPrint.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgvLabelPrint.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvLabelPrint.Location = New System.Drawing.Point(3, 3)
         Me.dgvLabelPrint.Name = "dgvLabelPrint"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLabelPrint.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvLabelPrint.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.dgvLabelPrint.Size = New System.Drawing.Size(1266, 280)
+        Me.dgvLabelPrint.Size = New System.Drawing.Size(1266, 253)
         Me.dgvLabelPrint.TabIndex = 14
         '
         'Column1
@@ -1783,7 +1797,7 @@ Partial Class frmRunPage
         Me.mnuPrint.Image = CType(resources.GetObject("mnuPrint.Image"), System.Drawing.Image)
         Me.mnuPrint.Name = "mnuPrint"
         Me.mnuPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.mnuPrint.Size = New System.Drawing.Size(140, 22)
+        Me.mnuPrint.Size = New System.Drawing.Size(152, 22)
         Me.mnuPrint.Text = "Print"
         '
         'mnuLotPrint
@@ -1805,7 +1819,7 @@ Partial Class frmRunPage
         Me.mnuExit.Image = CType(resources.GetObject("mnuExit.Image"), System.Drawing.Image)
         Me.mnuExit.Name = "mnuExit"
         Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuExit.Size = New System.Drawing.Size(140, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(152, 22)
         Me.mnuExit.Text = "Exit"
         '
         'ToolStripMenuItem6
@@ -1877,7 +1891,7 @@ Partial Class frmRunPage
         '
         Me.mnuRefresh.Image = CType(resources.GetObject("mnuRefresh.Image"), System.Drawing.Image)
         Me.mnuRefresh.Name = "mnuRefresh"
-        Me.mnuRefresh.Size = New System.Drawing.Size(113, 22)
+        Me.mnuRefresh.Size = New System.Drawing.Size(152, 22)
         Me.mnuRefresh.Text = "Refresh"
         '
         'ToolStripMenuItem1
@@ -1893,13 +1907,13 @@ Partial Class frmRunPage
         Me.mnuAuto.Checked = True
         Me.mnuAuto.CheckState = System.Windows.Forms.CheckState.Checked
         Me.mnuAuto.Name = "mnuAuto"
-        Me.mnuAuto.Size = New System.Drawing.Size(142, 22)
+        Me.mnuAuto.Size = New System.Drawing.Size(152, 22)
         Me.mnuAuto.Text = "Auto Print"
         '
         'mnuManual
         '
         Me.mnuManual.Name = "mnuManual"
-        Me.mnuManual.Size = New System.Drawing.Size(142, 22)
+        Me.mnuManual.Size = New System.Drawing.Size(152, 22)
         Me.mnuManual.Text = "Manual Print"
         '
         'ToolStripMenuItem16
@@ -1939,14 +1953,35 @@ Partial Class frmRunPage
         '
         Me.Timer3.Interval = 1000
         '
-        'Browser1
+        'SetupTab
         '
-        Me.Browser1.Location = New System.Drawing.Point(332, 273)
-        Me.Browser1.Name = "Browser1"
-        Me.Browser1.Size = New System.Drawing.Size(75, 22)
-        Me.Browser1.TabIndex = 76
-        Me.Browser1.Text = "Browse"
-        Me.Browser1.UseVisualStyleBackColor = True
+        Me.SetupTab.Controls.Add(Me.CompanyName)
+        Me.SetupTab.Controls.Add(Me.Label40)
+        Me.SetupTab.Location = New System.Drawing.Point(4, 22)
+        Me.SetupTab.Name = "SetupTab"
+        Me.SetupTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.SetupTab.Size = New System.Drawing.Size(453, 355)
+        Me.SetupTab.TabIndex = 2
+        Me.SetupTab.Text = "Setup"
+        Me.SetupTab.UseVisualStyleBackColor = True
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(15, 34)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(57, 13)
+        Me.Label40.TabIndex = 0
+        Me.Label40.Text = "Company :"
+        '
+        'CompanyName
+        '
+        Me.CompanyName.Location = New System.Drawing.Point(78, 36)
+        Me.CompanyName.Multiline = True
+        Me.CompanyName.Name = "CompanyName"
+        Me.CompanyName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.CompanyName.Size = New System.Drawing.Size(353, 82)
+        Me.CompanyName.TabIndex = 1
         '
         'frmRunPage
         '
@@ -1962,7 +1997,7 @@ Partial Class frmRunPage
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmRunPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Label Print Management V 1.9"
+        Me.Text = "Label Print Management V 1.91"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -2005,6 +2040,8 @@ Partial Class frmRunPage
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.SetupTab.ResumeLayout(False)
+        Me.SetupTab.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2185,4 +2222,7 @@ Partial Class frmRunPage
     Private WithEvents AxActUtlType1 As AxActUtlTypeLib.AxActUtlType
     Private WithEvents AxActSupportMsg1 As AxActSupportMsgLib.AxActSupportMsg
     Friend WithEvents Browser1 As System.Windows.Forms.Button
+    Friend WithEvents SetupTab As System.Windows.Forms.TabPage
+    Friend WithEvents CompanyName As System.Windows.Forms.TextBox
+    Friend WithEvents Label40 As System.Windows.Forms.Label
 End Class
