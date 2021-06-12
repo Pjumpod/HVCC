@@ -229,6 +229,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRunPage.resx">
       <DependentUpon>frmRunPage.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShift.resx">
       <DependentUpon>frmShift.vb</DependentUpon>

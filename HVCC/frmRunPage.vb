@@ -69,7 +69,7 @@ Public Class frmRunPage
         TabDatalogger.TabPages.Remove(TabManual)
         TabBarcode.TabPages.Remove(TabInfo)
         bConnectFlg = False
-        CompanyName.Text = "Hanon (Thailand) Co., LTD."
+        CompanyName.Text = "Hanon systems (Thailand) Co.,ltd."
         ShowPrinter()
     End Sub
 #Region "[[  Transection Zone  ]]"
@@ -1747,7 +1747,7 @@ Public Class frmRunPage
                 AutoPrintOneByOne() ' Print each label
                 UpdateCounter()
                 lbCounter.Refresh()
-                'AutoCounterUp()
+                AutoCounterUp()
             Else
                 NotifyIcon1.BalloonTipText = "Automatic Lot Print in Progress...."
                 NotifyIcon1.ShowBalloonTip(500)
