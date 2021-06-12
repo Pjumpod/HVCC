@@ -1177,6 +1177,7 @@ Public Class frmRunPage
             reader = reader.Replace("<PN>", PartNo)
             reader = reader.Replace("<CODE>", Code)
             reader = reader.Replace("<GSDB>", lbgsdb.Text)
+            reader = reader.Replace("<GSGD>", lbgsdb.Text)
             reader = reader.Replace("<SHIFT>", lbShift.Text)
             reader = reader.Replace("<SN>", Counter)
             reader = reader.Replace("<DATETIME>", tsToday.Text)
