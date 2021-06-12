@@ -679,6 +679,7 @@ Public Class frmRunPage
         End If
     End Sub
     Private Sub AutoPrintLabel()
+        lbPrintUse.Text = "NO"
         If rbMatrix.Checked = True Then
             Label30X550Matrix()
         ElseIf rbQR.Checked = True Then
@@ -686,6 +687,7 @@ Public Class frmRunPage
         End If
         SaveDataLogAuto()
         ShowDataLog()
+        lbPrintUse.Text = "YES"
     End Sub
     Private Sub Label30X550Matrix()
         pText.Remove(0, pText.Length)
