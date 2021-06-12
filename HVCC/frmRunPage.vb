@@ -679,7 +679,7 @@ Public Class frmRunPage
         End If
     End Sub
     Private Sub AutoPrintLabel()
-        lbPrintUse.Text = "NO"
+        'lbPrintUse.Text = "NO"
         If rbMatrix.Checked = True Then
             Label30X550Matrix()
         ElseIf rbQR.Checked = True Then
@@ -687,7 +687,7 @@ Public Class frmRunPage
         End If
         SaveDataLogAuto()
         ShowDataLog()
-        lbPrintUse.Text = "YES"
+        'lbPrintUse.Text = "YES"
     End Sub
     Private Sub Label30X550Matrix()
         pText.Remove(0, pText.Length)
@@ -1766,12 +1766,14 @@ Public Class frmRunPage
                     End If
                 Next
                 AutoPrintOneByOne() ' Print each label
+                lbPrintUse.Text = "NO"
                 AutoPrintLabel() 'Auto Print Label
                 UpdateSerial()
                 lbSerialNo1.Refresh()
                 AutoSerialUp()
                 UpdateCounter()
                 lbCounter.Refresh()
+                lbPrintUse.Text = "YES"
             End If
         End If
     End Sub
