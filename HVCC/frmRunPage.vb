@@ -2103,7 +2103,7 @@ Public Class frmRunPage
     Private Sub cmbModel_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbModel.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
-            If (IsNumeric(lbAutoModel.Text)) Then
+            If (IsNumeric(cmbAutomodel.Text)) Then
                 Dim chk As Integer = CInt(lbAutoModel.Text)
                 If (chk > 15) And (chk < 60) Then
                     rbEachMatrix.Checked = True
@@ -2121,7 +2121,7 @@ Public Class frmRunPage
     Private Sub cmbOrder_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbOrder.SelectedIndexChanged
         ShowPrintManual()
         If cmbAutomodel.Text <> "" Then
-            If (IsNumeric(lbAutoModel.Text)) Then
+            If (IsNumeric(cmbAutomodel.Text)) Then
                 Dim chk As Integer = CInt(lbAutoModel.Text)
                 If (chk > 15) And (chk < 60) Then
                     rbEachMatrix.Checked = True
